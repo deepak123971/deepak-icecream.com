@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}contact{% endblock title %}
+{% block body %}
+Contact us
+</div class= "container">
+<img src="https://source.unsplash.com/1600x700/?phone,contact">
+</div>
+<div class="container mb-3 py-4">
+<h1 class="text-center">Contact Us</h1>
+<form method="post" action="/contact">
+{% csrf_token %}
+
+    <div class="form">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+      </div>
+      
+      <div class="form">
+        <label for="email" class="form-label">email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+      
+    </div>
+      
+    <div class="form">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number">
+    
+      <div class="mb-3">
+        <label for="desc" class="form-label">Tell me about yourself</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button
+      </form>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>The message has been sent successfully.</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+
+
+{% endblock body %}
